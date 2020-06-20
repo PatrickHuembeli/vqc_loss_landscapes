@@ -2,9 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"say_hi": "00_core.ipynb"}
+index = {"say_hi": "00_core.ipynb",
+         "generate_circle_data": "01_torchcirq.ipynb",
+         "plot_data": "01_torchcirq.ipynb"}
 
-modules = ["core.py"]
+modules = ["core.py",
+           "torchcirq.py"]
 
 doc_url = "https://PatrickHuembeli.github.io/vqc_loss_landscapes/"
 

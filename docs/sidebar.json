@@ -1,6 +1,7 @@
 {
   "vqc_loss_landscapes": {
     "Overview": "/",
-    "module name here": "/core"
+    "module name here": "/core",
+    "Title": "/torchcirq"
   }
 }

@@ -13,6 +13,6 @@ entries:
       title: module name here
       url: /core
     output: web
-    title: VQC_Loss_Landscapes
+    title: vqc_loss_landscapes
   output: web
   title: Sidebar

@@ -14,7 +14,7 @@ entries:
       url: /core
     - output: web,pdf
       title: Title
-      url: /torchcirq
+      url: /Ex3_Hessian_vs_metric_tensor
     output: web
     title: vqc_loss_landscapes
   output: web

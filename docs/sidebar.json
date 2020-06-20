@@ -2,6 +2,6 @@
   "vqc_loss_landscapes": {
     "Overview": "/",
     "module name here": "/core",
-    "Title": "/torchcirq"
+    "Title": "/Ex3_Hessian_vs_metric_tensor"
   }
 }

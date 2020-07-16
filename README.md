@@ -1,24 +1,5 @@
-# Project name here
-> Summary description here.
+# Characterizing the loss landscape of variational quantum circuits
+> By Patrick Huembeli and Alexandre Dauphin
 
 
-This file will become your README and also the index of your documentation.
-
-## Install
-
-`pip install your_project_name`
-
-## How to use
-
-Fill me in please! Don't forget code examples:
-
-```python
-1+1
-```
-
-
-
-
-    2
-
-
+## The Example files contain all the code necessary to reproduce the Figures

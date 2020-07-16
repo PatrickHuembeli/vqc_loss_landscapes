@@ -1,8 +1,9 @@
 {
   "vqc_loss_landscapes": {
     "Overview": "/",
-    "module name here": "/core",
-    "Title": "/Ex2_Train_pennylane_Hessian",
+    "Title": "/hess_vs_metrictensor",
+    "Pytorch version for QNN trained on Data": "/Ex1_Train_Reuploading_Circuit_Pytorch",
+    "Pennylane version for QNN trained on Data": "/Ex2_Train_pennylane_Hessian",
     "Compare Hessian, metric tensor and vanilla SGD": "/Ex3_Hessian_vs_metric_tensor"
   }
 }

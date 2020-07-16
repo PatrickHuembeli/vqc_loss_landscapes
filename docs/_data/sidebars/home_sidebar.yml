@@ -10,10 +10,13 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module name here
-      url: /core
-    - output: web,pdf
       title: Title
+      url: /hess_vs_metrictensor
+    - output: web,pdf
+      title: Pytorch version for QNN trained on Data
+      url: /Ex1_Train_Reuploading_Circuit_Pytorch
+    - output: web,pdf
+      title: Pennylane version for QNN trained on Data
       url: /Ex2_Train_pennylane_Hessian
     - output: web,pdf
       title: Compare Hessian, metric tensor and vanilla SGD

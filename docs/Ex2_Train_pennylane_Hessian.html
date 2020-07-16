@@ -1,6 +1,6 @@
 ---
 
-title: Title
+title: Pennylane version for QNN trained on Data
 
 keywords: fastai
 sidebar: home_sidebar
@@ -102,7 +102,7 @@ sidebar: home_sidebar
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.5439453125</pre>
+<pre>0.458984375</pre>
 </div>
 
 </div>
@@ -138,7 +138,6 @@ sidebar: home_sidebar
 
 
 <span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;reupload_simple_circle&quot;</span>
-<span class="c1">#model.save_epoch(1, 0.1, [1,2,3], directory, params, H_train= [1,2], Hev_train=[1,2], H_test=[1,2,3], Hev_test=[1,2])</span>
 
 <span class="c1"># Generate training and test data</span>
 <span class="n">num_training</span> <span class="o">=</span> <span class="mi">200</span>
@@ -161,10 +160,7 @@ sidebar: home_sidebar
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
 
 <span class="k">def</span> <span class="nf">training_run</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="c1">#device = &#39;default.qubit&#39;</span>
     <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;forest.numpy_wavefunction&#39;</span>
-
-    <span class="c1">#model = Reuploading_model(device = device, width=width, layers=num_layers)</span>
     <span class="n">qcirc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">qcircuit</span>
 
     <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -208,7 +204,7 @@ sidebar: home_sidebar
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1 0.3447265625
+<pre>1 0.0478515625
 start_training
 </pre>
 </div>
@@ -217,7 +213,7 @@ start_training
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/patrickhuembeli/anaconda3/envs/QC/lib/python3.7/site-packages/ipykernel_launcher.py:53: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+<pre>/Users/patrickhuembeli/anaconda3/envs/QC/lib/python3.7/site-packages/ipykernel_launcher.py:48: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
 Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
 </pre>
 </div>
@@ -227,9 +223,6 @@ Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hessian Dimension: 24, 24
-
-Epoch:  1 | Loss: 0.002275 | Train accuracy: 0.450000 | Test accuracy: 0.487000
-Hessian Dimension: 24, 24
 </pre>
 </div>
 </div>
@@ -240,26 +233,26 @@ Hessian Dimension: 24, 24
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-23-0b17cad33bae&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     80</span> 
-<span class="ansi-green-intense-fg ansi-bold">     81</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;start_training&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 82</span><span class="ansi-red-fg"> </span>training_run<span class="ansi-blue-fg">(</span>width<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> num_layers<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">&lt;ipython-input-7-9f4cd73e5f34&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     67</span> 
+<span class="ansi-green-intense-fg ansi-bold">     68</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;start_training&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 69</span><span class="ansi-red-fg"> </span>training_run<span class="ansi-blue-fg">(</span>width<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> num_layers<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-23-0b17cad33bae&gt;</span> in <span class="ansi-cyan-fg">training_run</span><span class="ansi-blue-fg">(width, num_layers)</span>
-<span class="ansi-green-intense-fg ansi-bold">     52</span> 
-<span class="ansi-green-intense-fg ansi-bold">     53</span>     <span class="ansi-green-fg">for</span> it <span class="ansi-green-fg">in</span> tqdm<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span>epochs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 54</span><span class="ansi-red-fg">         </span>H_train <span class="ansi-blue-fg">=</span> Hessian<span class="ansi-blue-fg">(</span>params<span class="ansi-blue-fg">,</span> model<span class="ansi-blue-fg">,</span> X<span class="ansi-blue-fg">=</span>X_train<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">=</span>y_train<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     55</span>         Hev_train<span class="ansi-blue-fg">,</span> Hv_train <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>linalg<span class="ansi-blue-fg">.</span>eigh<span class="ansi-blue-fg">(</span>H_train<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     56</span> <span class="ansi-red-fg">#         lr = 1/Hev_train.max()</span>
+<span class="ansi-green-fg">&lt;ipython-input-7-9f4cd73e5f34&gt;</span> in <span class="ansi-cyan-fg">training_run</span><span class="ansi-blue-fg">(width, num_layers)</span>
+<span class="ansi-green-intense-fg ansi-bold">     47</span> 
+<span class="ansi-green-intense-fg ansi-bold">     48</span>     <span class="ansi-green-fg">for</span> it <span class="ansi-green-fg">in</span> tqdm<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span>epochs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 49</span><span class="ansi-red-fg">         </span>H_train <span class="ansi-blue-fg">=</span> Hessian<span class="ansi-blue-fg">(</span>params<span class="ansi-blue-fg">,</span> model<span class="ansi-blue-fg">,</span> X<span class="ansi-blue-fg">=</span>X_train<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">=</span>y_train<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     50</span>         Hev_train<span class="ansi-blue-fg">,</span> Hv_train <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>linalg<span class="ansi-blue-fg">.</span>eigh<span class="ansi-blue-fg">(</span>H_train<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     51</span>         opt <span class="ansi-blue-fg">=</span> qml<span class="ansi-blue-fg">.</span>GradientDescentOptimizer<span class="ansi-blue-fg">(</span>lr<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">~/Dropbox/vqc_loss_landscapes/vqc_loss_landscapes/pennylanecirq.py</span> in <span class="ansi-cyan-fg">Hessian</span><span class="ansi-blue-fg">(params, model, X, y, Z_measure)</span>
-<span class="ansi-green-intense-fg ansi-bold">    168</span>                     eps_mm<span class="ansi-blue-fg">[</span>l<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">-=</span> eps
-<span class="ansi-green-intense-fg ansi-bold">    169</span> 
-<span class="ansi-green-fg">--&gt; 170</span><span class="ansi-red-fg">                     </span>measure_pp <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">.</span>cost<span class="ansi-blue-fg">(</span>eps_pp<span class="ansi-blue-fg">.</span>reshape<span class="ansi-blue-fg">(</span>shape<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> Xbatch<span class="ansi-blue-fg">,</span> ybatch<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    171</span>                     measure_pm <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">.</span>cost<span class="ansi-blue-fg">(</span>eps_pm<span class="ansi-blue-fg">.</span>reshape<span class="ansi-blue-fg">(</span>shape<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> Xbatch<span class="ansi-blue-fg">,</span> ybatch<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    172</span>                     measure_mp <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">.</span>cost<span class="ansi-blue-fg">(</span>eps_mp<span class="ansi-blue-fg">.</span>reshape<span class="ansi-blue-fg">(</span>shape<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> Xbatch<span class="ansi-blue-fg">,</span> ybatch<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">~/Dropbox/34_5_vqc_loss_landscapes/vqc_loss_landscapes/pennylanecirq.py</span> in <span class="ansi-cyan-fg">Hessian</span><span class="ansi-blue-fg">(params, model, X, y, Z_measure)</span>
+<span class="ansi-green-intense-fg ansi-bold">    138</span>             eps_plus <span class="ansi-blue-fg">=</span> params<span class="ansi-blue-fg">.</span>copy<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    139</span>             eps_plus<span class="ansi-blue-fg">[</span>k<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+=</span> eps
+<span class="ansi-green-fg">--&gt; 140</span><span class="ansi-red-fg">             </span>exp_value_plus <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">.</span>cost<span class="ansi-blue-fg">(</span>eps_plus<span class="ansi-blue-fg">.</span>reshape<span class="ansi-blue-fg">(</span>shape<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> Xbatch<span class="ansi-blue-fg">,</span> ybatch<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    141</span> 
+<span class="ansi-green-intense-fg ansi-bold">    142</span>             eps_minus <span class="ansi-blue-fg">=</span> params<span class="ansi-blue-fg">.</span>copy<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">~/Dropbox/vqc_loss_landscapes/vqc_loss_landscapes/pennylanecirq.py</span> in <span class="ansi-cyan-fg">cost</span><span class="ansi-blue-fg">(self, params, x, y, Z_measure)</span>
+<span class="ansi-green-fg">~/Dropbox/34_5_vqc_loss_landscapes/vqc_loss_landscapes/pennylanecirq.py</span> in <span class="ansi-cyan-fg">cost</span><span class="ansi-blue-fg">(self, params, x, y, Z_measure)</span>
 <span class="ansi-green-intense-fg ansi-bold">     78</span>         loss <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0.0</span>
 <span class="ansi-green-intense-fg ansi-bold">     79</span>         <span class="ansi-green-fg">for</span> i <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>len<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">---&gt; 80</span><span class="ansi-red-fg">             </span>fidelity <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>qcircuit<span class="ansi-blue-fg">(</span>params<span class="ansi-blue-fg">,</span> x<span class="ansi-blue-fg">=</span>x<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">=</span>y<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> Z_measure<span class="ansi-blue-fg">=</span>Z_measure<span class="ansi-blue-fg">)</span>
@@ -288,57 +281,53 @@ Hessian Dimension: 24, 24
 <span class="ansi-green-intense-fg ansi-bold">    781</span>         <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>output_conversion<span class="ansi-blue-fg">(</span>ret<span class="ansi-blue-fg">)</span>
 
 <span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane/_device.py</span> in <span class="ansi-cyan-fg">execute</span><span class="ansi-blue-fg">(self, queue, observables, parameters, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    188</span>             self<span class="ansi-blue-fg">.</span>post_apply<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    189</span> 
+<span class="ansi-green-fg">--&gt; 190</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>pre_measure<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    191</span> 
 <span class="ansi-green-intense-fg ansi-bold">    192</span>             <span class="ansi-green-fg">for</span> obs <span class="ansi-green-fg">in</span> observables<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    193</span>                 <span class="ansi-green-fg">if</span> obs<span class="ansi-blue-fg">.</span>return_type <span class="ansi-green-fg">is</span> Expectation<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 194</span><span class="ansi-red-fg">                     </span>results<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>expval<span class="ansi-blue-fg">(</span>obs<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span> obs<span class="ansi-blue-fg">.</span>wires<span class="ansi-blue-fg">,</span> obs<span class="ansi-blue-fg">.</span>parameters<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    195</span> 
-<span class="ansi-green-intense-fg ansi-bold">    196</span>                 <span class="ansi-green-fg">elif</span> obs<span class="ansi-blue-fg">.</span>return_type <span class="ansi-green-fg">is</span> Variance<span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane_qiskit/qiskit_device.py</span> in <span class="ansi-cyan-fg">expval</span><span class="ansi-blue-fg">(self, observable, wires, par)</span>
-<span class="ansi-green-intense-fg ansi-bold">    353</span> 
-<span class="ansi-green-intense-fg ansi-bold">    354</span>         <span class="ansi-red-fg"># estimate the ev</span>
-<span class="ansi-green-fg">--&gt; 355</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> np<span class="ansi-blue-fg">.</span>mean<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>sample<span class="ansi-blue-fg">(</span>observable<span class="ansi-blue-fg">,</span> wires<span class="ansi-blue-fg">,</span> par<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    356</span> 
-<span class="ansi-green-intense-fg ansi-bold">    357</span>     <span class="ansi-green-fg">def</span> var<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> observable<span class="ansi-blue-fg">,</span> wires<span class="ansi-blue-fg">,</span> par<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane_qiskit/qiskit_device.py</span> in <span class="ansi-cyan-fg">pre_measure</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    337</span> 
+<span class="ansi-green-intense-fg ansi-bold">    338</span>         qobj <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>compile<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 339</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>run<span class="ansi-blue-fg">(</span>qobj<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    340</span> 
+<span class="ansi-green-intense-fg ansi-bold">    341</span>     <span class="ansi-green-fg">def</span> expval<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> observable<span class="ansi-blue-fg">,</span> wires<span class="ansi-blue-fg">,</span> par<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane_qiskit/qiskit_device.py</span> in <span class="ansi-cyan-fg">sample</span><span class="ansi-blue-fg">(self, observable, wires, par)</span>
-<span class="ansi-green-intense-fg ansi-bold">    392</span>             <span class="ansi-red-fg"># Need to convert counts into samples</span>
-<span class="ansi-green-intense-fg ansi-bold">    393</span>             samples = np.vstack(
-<span class="ansi-green-fg">--&gt; 394</span><span class="ansi-red-fg">                 </span><span class="ansi-blue-fg">[</span>np<span class="ansi-blue-fg">.</span>vstack<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">*</span> int<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>shots <span class="ansi-blue-fg">*</span> p<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> s<span class="ansi-blue-fg">,</span> p <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>probabilities<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    395</span>             )
-<span class="ansi-green-intense-fg ansi-bold">    396</span> 
+<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane_qiskit/qiskit_device.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, qobj)</span>
+<span class="ansi-green-intense-fg ansi-bold">    247</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;Run the compiled circuit, and query the result.&#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    248</span>         self<span class="ansi-blue-fg">.</span>_current_job <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>backend<span class="ansi-blue-fg">.</span>run<span class="ansi-blue-fg">(</span>qobj<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>self<span class="ansi-blue-fg">.</span>run_args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 249</span><span class="ansi-red-fg">         </span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_current_job<span class="ansi-blue-fg">.</span>result<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    250</span> 
+<span class="ansi-green-intense-fg ansi-bold">    251</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>backend_name <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>_state_backends<span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane_qiskit/qiskit_device.py</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-<span class="ansi-green-intense-fg ansi-bold">    392</span>             <span class="ansi-red-fg"># Need to convert counts into samples</span>
-<span class="ansi-green-intense-fg ansi-bold">    393</span>             samples = np.vstack(
-<span class="ansi-green-fg">--&gt; 394</span><span class="ansi-red-fg">                 </span><span class="ansi-blue-fg">[</span>np<span class="ansi-blue-fg">.</span>vstack<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">*</span> int<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>shots <span class="ansi-blue-fg">*</span> p<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> s<span class="ansi-blue-fg">,</span> p <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>probabilities<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    395</span>             )
-<span class="ansi-green-intense-fg ansi-bold">    396</span> 
+<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/qiskit/providers/aer/aerjob.py</span> in <span class="ansi-cyan-fg">_wrapper</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     39</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>_future <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     40</span>             <span class="ansi-green-fg">raise</span> JobError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Job not submitted yet!. You have to .submit() first!&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 41</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     42</span>     <span class="ansi-green-fg">return</span> _wrapper
+<span class="ansi-green-intense-fg ansi-bold">     43</span> 
 
-<span class="ansi-green-fg">&lt;__array_function__ internals&gt;</span> in <span class="ansi-cyan-fg">vstack</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/qiskit/providers/aer/aerjob.py</span> in <span class="ansi-cyan-fg">result</span><span class="ansi-blue-fg">(self, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">     92</span>             concurrent<span class="ansi-blue-fg">.</span>futures<span class="ansi-blue-fg">.</span>CancelledError<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">if</span> job cancelled before completed<span class="ansi-blue-fg">.</span>
+<span class="ansi-green-intense-fg ansi-bold">     93</span>         &#34;&#34;&#34;
+<span class="ansi-green-fg">---&gt; 94</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_future<span class="ansi-blue-fg">.</span>result<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     95</span> 
+<span class="ansi-green-intense-fg ansi-bold">     96</span>     <span class="ansi-blue-fg">@</span>requires_submit
 
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ansi-cyan-fg">vstack</span><span class="ansi-blue-fg">(tup)</span>
-<span class="ansi-green-intense-fg ansi-bold">    278</span>         <span class="ansi-red-fg"># raise warning if necessary</span>
-<span class="ansi-green-intense-fg ansi-bold">    279</span>         _arrays_for_stack_dispatcher<span class="ansi-blue-fg">(</span>tup<span class="ansi-blue-fg">,</span> stacklevel<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 280</span><span class="ansi-red-fg">     </span>arrs <span class="ansi-blue-fg">=</span> atleast_2d<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>tup<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    281</span>     <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> isinstance<span class="ansi-blue-fg">(</span>arrs<span class="ansi-blue-fg">,</span> list<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    282</span>         arrs <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>arrs<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/concurrent/futures/_base.py</span> in <span class="ansi-cyan-fg">result</span><span class="ansi-blue-fg">(self, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    428</span>                 <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>__get_result<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    429</span> 
+<span class="ansi-green-fg">--&gt; 430</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>_condition<span class="ansi-blue-fg">.</span>wait<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    431</span> 
+<span class="ansi-green-intense-fg ansi-bold">    432</span>             <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>_state <span class="ansi-green-fg">in</span> <span class="ansi-blue-fg">[</span>CANCELLED<span class="ansi-blue-fg">,</span> CANCELLED_AND_NOTIFIED<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">&lt;__array_function__ internals&gt;</span> in <span class="ansi-cyan-fg">atleast_2d</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ansi-cyan-fg">atleast_2d</span><span class="ansi-blue-fg">(*arys)</span>
-<span class="ansi-green-intense-fg ansi-bold">    121</span>     res <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    122</span>     <span class="ansi-green-fg">for</span> ary <span class="ansi-green-fg">in</span> arys<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 123</span><span class="ansi-red-fg">         </span>ary <span class="ansi-blue-fg">=</span> asanyarray<span class="ansi-blue-fg">(</span>ary<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    124</span>         <span class="ansi-green-fg">if</span> ary<span class="ansi-blue-fg">.</span>ndim <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    125</span>             result <span class="ansi-blue-fg">=</span> ary<span class="ansi-blue-fg">.</span>reshape<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/numpy/core/_asarray.py</span> in <span class="ansi-cyan-fg">asanyarray</span><span class="ansi-blue-fg">(a, dtype, order)</span>
-<span class="ansi-green-intense-fg ansi-bold">    136</span> 
-<span class="ansi-green-intense-fg ansi-bold">    137</span>     &#34;&#34;&#34;
-<span class="ansi-green-fg">--&gt; 138</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> array<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">,</span> copy<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">,</span> order<span class="ansi-blue-fg">=</span>order<span class="ansi-blue-fg">,</span> subok<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    139</span> 
-<span class="ansi-green-intense-fg ansi-bold">    140</span> 
+<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/threading.py</span> in <span class="ansi-cyan-fg">wait</span><span class="ansi-blue-fg">(self, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    294</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>    <span class="ansi-red-fg"># restore state no matter what (e.g., KeyboardInterrupt)</span>
+<span class="ansi-green-intense-fg ansi-bold">    295</span>             <span class="ansi-green-fg">if</span> timeout <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 296</span><span class="ansi-red-fg">                 </span>waiter<span class="ansi-blue-fg">.</span>acquire<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    297</span>                 gotit <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
+<span class="ansi-green-intense-fg ansi-bold">    298</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
 
 <span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
 </div>

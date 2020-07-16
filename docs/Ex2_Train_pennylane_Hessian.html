@@ -1,6 +1,6 @@
 ---
 
-title: Pennylane version for QNN trained on Data
+title: Example: Pennylane version for QNN trained on Data
 
 keywords: fastai
 sidebar: home_sidebar
@@ -68,8 +68,7 @@ sidebar: home_sidebar
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Quick test run of the circuit</p>
-
+<h2 id="Quick-test-run-of-the-circuit">Quick test run of the circuit<a class="anchor-link" href="#Quick-test-run-of-the-circuit"> </a></h2>
 </div>
 </div>
 </div>
@@ -115,8 +114,7 @@ sidebar: home_sidebar
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Train Circuit and calculate Hessian during training</p>
-
+<h2 id="Train-Circuit-and-calculate-Hessian-during-training">Train Circuit and calculate Hessian during training<a class="anchor-link" href="#Train-Circuit-and-calculate-Hessian-during-training"> </a></h2>
 </div>
 </div>
 </div>
@@ -156,7 +154,7 @@ sidebar: home_sidebar
 
 
 
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
 
 <span class="k">def</span> <span class="nf">training_run</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -204,7 +202,7 @@ sidebar: home_sidebar
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1 0.0478515625
+<pre>1 0.091796875
 start_training
 </pre>
 </div>
@@ -213,7 +211,7 @@ start_training
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/patrickhuembeli/anaconda3/envs/QC/lib/python3.7/site-packages/ipykernel_launcher.py:48: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+<pre>/Users/patrickhuembeli/anaconda3/envs/QC/lib/python3.7/site-packages/ipykernel_launcher.py:44: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
 Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
 </pre>
 </div>
@@ -223,113 +221,8 @@ Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hessian Dimension: 24, 24
+
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-7-9f4cd73e5f34&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     67</span> 
-<span class="ansi-green-intense-fg ansi-bold">     68</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;start_training&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 69</span><span class="ansi-red-fg"> </span>training_run<span class="ansi-blue-fg">(</span>width<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> num_layers<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-7-9f4cd73e5f34&gt;</span> in <span class="ansi-cyan-fg">training_run</span><span class="ansi-blue-fg">(width, num_layers)</span>
-<span class="ansi-green-intense-fg ansi-bold">     47</span> 
-<span class="ansi-green-intense-fg ansi-bold">     48</span>     <span class="ansi-green-fg">for</span> it <span class="ansi-green-fg">in</span> tqdm<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span>epochs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 49</span><span class="ansi-red-fg">         </span>H_train <span class="ansi-blue-fg">=</span> Hessian<span class="ansi-blue-fg">(</span>params<span class="ansi-blue-fg">,</span> model<span class="ansi-blue-fg">,</span> X<span class="ansi-blue-fg">=</span>X_train<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">=</span>y_train<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     50</span>         Hev_train<span class="ansi-blue-fg">,</span> Hv_train <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>linalg<span class="ansi-blue-fg">.</span>eigh<span class="ansi-blue-fg">(</span>H_train<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     51</span>         opt <span class="ansi-blue-fg">=</span> qml<span class="ansi-blue-fg">.</span>GradientDescentOptimizer<span class="ansi-blue-fg">(</span>lr<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/Dropbox/34_5_vqc_loss_landscapes/vqc_loss_landscapes/pennylanecirq.py</span> in <span class="ansi-cyan-fg">Hessian</span><span class="ansi-blue-fg">(params, model, X, y, Z_measure)</span>
-<span class="ansi-green-intense-fg ansi-bold">    138</span>             eps_plus <span class="ansi-blue-fg">=</span> params<span class="ansi-blue-fg">.</span>copy<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    139</span>             eps_plus<span class="ansi-blue-fg">[</span>k<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+=</span> eps
-<span class="ansi-green-fg">--&gt; 140</span><span class="ansi-red-fg">             </span>exp_value_plus <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">.</span>cost<span class="ansi-blue-fg">(</span>eps_plus<span class="ansi-blue-fg">.</span>reshape<span class="ansi-blue-fg">(</span>shape<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> Xbatch<span class="ansi-blue-fg">,</span> ybatch<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    141</span> 
-<span class="ansi-green-intense-fg ansi-bold">    142</span>             eps_minus <span class="ansi-blue-fg">=</span> params<span class="ansi-blue-fg">.</span>copy<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/Dropbox/34_5_vqc_loss_landscapes/vqc_loss_landscapes/pennylanecirq.py</span> in <span class="ansi-cyan-fg">cost</span><span class="ansi-blue-fg">(self, params, x, y, Z_measure)</span>
-<span class="ansi-green-intense-fg ansi-bold">     78</span>         loss <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0.0</span>
-<span class="ansi-green-intense-fg ansi-bold">     79</span>         <span class="ansi-green-fg">for</span> i <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>len<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 80</span><span class="ansi-red-fg">             </span>fidelity <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>qcircuit<span class="ansi-blue-fg">(</span>params<span class="ansi-blue-fg">,</span> x<span class="ansi-blue-fg">=</span>x<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">=</span>y<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> Z_measure<span class="ansi-blue-fg">=</span>Z_measure<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     81</span>             loss <span class="ansi-blue-fg">+=</span> <span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span> <span class="ansi-blue-fg">-</span> fidelity<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     82</span>         <span class="ansi-green-fg">return</span> loss<span class="ansi-blue-fg">/</span>len<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane/interfaces/autograd.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     45</span>             <span class="ansi-red-fg"># prevents autograd boxed arguments from going through to evaluate</span>
-<span class="ansi-green-intense-fg ansi-bold">     46</span>             args <span class="ansi-blue-fg">=</span> autograd<span class="ansi-blue-fg">.</span>builtins<span class="ansi-blue-fg">.</span>tuple<span class="ansi-blue-fg">(</span>args<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># pylint: disable=no-member</span>
-<span class="ansi-green-fg">---&gt; 47</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>evaluate<span class="ansi-blue-fg">(</span>args<span class="ansi-blue-fg">,</span> kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     48</span> 
-<span class="ansi-green-intense-fg ansi-bold">     49</span>         <span class="ansi-blue-fg">@</span>staticmethod
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/autograd/tracer.py</span> in <span class="ansi-cyan-fg">f_wrapped</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     46</span>             <span class="ansi-green-fg">return</span> new_box<span class="ansi-blue-fg">(</span>ans<span class="ansi-blue-fg">,</span> trace<span class="ansi-blue-fg">,</span> node<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     47</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 48</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> f_raw<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     49</span>     f_wrapped<span class="ansi-blue-fg">.</span>fun <span class="ansi-blue-fg">=</span> f_raw
-<span class="ansi-green-intense-fg ansi-bold">     50</span>     f_wrapped<span class="ansi-blue-fg">.</span>_is_autograd_primitive <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane/qnodes/base.py</span> in <span class="ansi-cyan-fg">evaluate</span><span class="ansi-blue-fg">(self, args, kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    777</span>                 self<span class="ansi-blue-fg">.</span>circuit<span class="ansi-blue-fg">.</span>observables<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    778</span>                 self<span class="ansi-blue-fg">.</span>variable_deps<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 779</span><span class="ansi-red-fg">                 </span>return_native_type<span class="ansi-blue-fg">=</span>temp<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    780</span>             )
-<span class="ansi-green-intense-fg ansi-bold">    781</span>         <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>output_conversion<span class="ansi-blue-fg">(</span>ret<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane/_device.py</span> in <span class="ansi-cyan-fg">execute</span><span class="ansi-blue-fg">(self, queue, observables, parameters, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span>             self<span class="ansi-blue-fg">.</span>post_apply<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    189</span> 
-<span class="ansi-green-fg">--&gt; 190</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>pre_measure<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    191</span> 
-<span class="ansi-green-intense-fg ansi-bold">    192</span>             <span class="ansi-green-fg">for</span> obs <span class="ansi-green-fg">in</span> observables<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane_qiskit/qiskit_device.py</span> in <span class="ansi-cyan-fg">pre_measure</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    337</span> 
-<span class="ansi-green-intense-fg ansi-bold">    338</span>         qobj <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>compile<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 339</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>run<span class="ansi-blue-fg">(</span>qobj<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    340</span> 
-<span class="ansi-green-intense-fg ansi-bold">    341</span>     <span class="ansi-green-fg">def</span> expval<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> observable<span class="ansi-blue-fg">,</span> wires<span class="ansi-blue-fg">,</span> par<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/pennylane_qiskit/qiskit_device.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, qobj)</span>
-<span class="ansi-green-intense-fg ansi-bold">    247</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;Run the compiled circuit, and query the result.&#34;&#34;&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    248</span>         self<span class="ansi-blue-fg">.</span>_current_job <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>backend<span class="ansi-blue-fg">.</span>run<span class="ansi-blue-fg">(</span>qobj<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>self<span class="ansi-blue-fg">.</span>run_args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 249</span><span class="ansi-red-fg">         </span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_current_job<span class="ansi-blue-fg">.</span>result<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    250</span> 
-<span class="ansi-green-intense-fg ansi-bold">    251</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>backend_name <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>_state_backends<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/qiskit/providers/aer/aerjob.py</span> in <span class="ansi-cyan-fg">_wrapper</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>_future <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     40</span>             <span class="ansi-green-fg">raise</span> JobError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Job not submitted yet!. You have to .submit() first!&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 41</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     42</span>     <span class="ansi-green-fg">return</span> _wrapper
-<span class="ansi-green-intense-fg ansi-bold">     43</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/site-packages/qiskit/providers/aer/aerjob.py</span> in <span class="ansi-cyan-fg">result</span><span class="ansi-blue-fg">(self, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">     92</span>             concurrent<span class="ansi-blue-fg">.</span>futures<span class="ansi-blue-fg">.</span>CancelledError<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">if</span> job cancelled before completed<span class="ansi-blue-fg">.</span>
-<span class="ansi-green-intense-fg ansi-bold">     93</span>         &#34;&#34;&#34;
-<span class="ansi-green-fg">---&gt; 94</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_future<span class="ansi-blue-fg">.</span>result<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     95</span> 
-<span class="ansi-green-intense-fg ansi-bold">     96</span>     <span class="ansi-blue-fg">@</span>requires_submit
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/concurrent/futures/_base.py</span> in <span class="ansi-cyan-fg">result</span><span class="ansi-blue-fg">(self, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">    428</span>                 <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>__get_result<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    429</span> 
-<span class="ansi-green-fg">--&gt; 430</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>_condition<span class="ansi-blue-fg">.</span>wait<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    431</span> 
-<span class="ansi-green-intense-fg ansi-bold">    432</span>             <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>_state <span class="ansi-green-fg">in</span> <span class="ansi-blue-fg">[</span>CANCELLED<span class="ansi-blue-fg">,</span> CANCELLED_AND_NOTIFIED<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/QC/lib/python3.7/threading.py</span> in <span class="ansi-cyan-fg">wait</span><span class="ansi-blue-fg">(self, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">    294</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>    <span class="ansi-red-fg"># restore state no matter what (e.g., KeyboardInterrupt)</span>
-<span class="ansi-green-intense-fg ansi-bold">    295</span>             <span class="ansi-green-fg">if</span> timeout <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 296</span><span class="ansi-red-fg">                 </span>waiter<span class="ansi-blue-fg">.</span>acquire<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    297</span>                 gotit <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">    298</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
 </div>
 </div>
 

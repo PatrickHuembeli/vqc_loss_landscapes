@@ -39,7 +39,7 @@ def R1(angle, matrix):
 
         angle (float): rotation angle
 
-        matrix (array): 2x2 np.array matrix $M$, rotation axis defined by 2x2 matrix
+        matrix (array): rotation axis defined by 2x2 matrix
 
     Returns:
 
@@ -49,10 +49,12 @@ def R1(angle, matrix):
 
 def R3(angles):
     """
-    R3 rotation R3(\Phi, \Theta, \Omega) = RZ(\Omega) RY(\Theta) RZ(\Phi)
+    R3 rotation $R_3(\Phi, \Theta, \Omega) = R_Z(\Omega) R_Y(\Theta) R_Z(\Phi)$
 
     Parameters:
+
         angles: list / array of length 3
+
         phi = list[0], theta = list[1], omega = list[2]
     """
     return matmul(matmul(R1(angles[0], Z), R1(angles[1], Y)), R1(angles[2], Z))

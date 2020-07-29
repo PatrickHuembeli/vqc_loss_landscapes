@@ -33,12 +33,11 @@ else:
 # Cell
 def R1(angle, matrix):
     """
-    Rotation Gate around axis defined by matrix $M$ and angle $\Theta$
+    Rotation Gate around axis defined by `matrix` $M$ and `angle` $\Theta$
 
     Parameters:
         angle (float): rotation angle
-
-        matrix (arry): 2x2 np.array matrix $M$, rotation axis defined by 2x2 matrix
+        matrix (array): 2x2 np.array matrix $M$, rotation axis defined by 2x2 matrix
 
     Returns:
         $cos(\Theta/2)$

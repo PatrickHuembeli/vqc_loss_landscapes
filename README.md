@@ -2,4 +2,8 @@
 > By Patrick Huembeli and Alexandre Dauphin
 
 
-## The Example files contain all the code necessary to reproduce the Figures
+# The Example files contain all the code necessary to reproduce the Figures
+
+# Acknowledgement
+
+The complex pytorch library comes from Qucumber https://github.com/PIQuIL/QuCumber

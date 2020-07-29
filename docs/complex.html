@@ -47,16 +47,6 @@ sidebar: home_sidebar
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="make_complex" class="doc_header"><code>make_complex</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_complex</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>A function that creates a torch compatible complex tensor.
-.. note:: <code>x</code> and <code>y</code> must have the same shape.
-:param x: The real part or a complex numpy array. If a numpy array,
-          will ignore <code>y</code>.
-:type x: torch.Tensor or numpy.ndarray
-:param y: The imaginary part. Can be <code>None</code>, in which case, the resulting
-          complex tensor will have imaginary part equal to zero.
-:type y: torch.Tensor
-:returns: The tensor :math:<code>[x,y] = x + iy</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -79,13 +69,8 @@ sidebar: home_sidebar
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="numpy" class="doc_header"><code>numpy</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>numpy</code>(<strong><code>x</code></strong>)</p>
+<h4 id="numpy" class="doc_header"><code>numpy</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L24" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>numpy</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Converts a complex torch tensor into a numpy array
-:param x: The tensor to convert.
-:type x: torch.Tensor
-:returns: A complex numpy array containing the data from <code>x</code>.
-:rtype: numpy.ndarray</p>
 
 </div>
 
@@ -108,13 +93,8 @@ sidebar: home_sidebar
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="real" class="doc_header"><code>real</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L45" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>real</code>(<strong><code>x</code></strong>)</p>
+<h4 id="real" class="doc_header"><code>real</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L28" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>real</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Returns the real part of a complex tensor.
-:param x: The complex tensor
-:type x: torch.Tensor
-:returns: The real part of <code>x</code>; will have one less dimension than <code>x</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -137,13 +117,8 @@ sidebar: home_sidebar
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="imag" class="doc_header"><code>imag</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>imag</code>(<strong><code>x</code></strong>)</p>
+<h4 id="imag" class="doc_header"><code>imag</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>imag</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Returns the imaginary part of a complex tensor.
-:param x: The complex tensor
-:type x: torch.Tensor
-:returns: The imaginary part of <code>x</code>; will have one less dimension than <code>x</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -166,17 +141,8 @@ sidebar: home_sidebar
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="scalar_mult" class="doc_header"><code>scalar_mult</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L65" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scalar_mult</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>, <strong><code>out</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="scalar_mult" class="doc_header"><code>scalar_mult</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scalar_mult</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>, <strong><code>out</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>A function that computes the product between complex matrices and scalars,
-complex vectors and scalars or two complex scalars.
-:param x: A complex scalar, vector or matrix.
-:type x: torch.Tensor
-:param y: A complex scalar, vector or matrix.
-:type y: torch.Tensor
-:returns: The product between <code>x</code> and <code>y</code>.
-          Either overwrites <code>out</code>, or returns a new tensor.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -199,17 +165,8 @@ complex vectors and scalars or two complex scalars.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="matmul" class="doc_header"><code>matmul</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>matmul</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="matmul" class="doc_header"><code>matmul</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L50" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>matmul</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>A function that computes complex matrix-matrix and matrix-vector products.
-.. note:: If one wishes to do matrix-vector products, the vector must be
-          the second argument (y).
-:param x: A complex matrix.
-:type x: torch.Tensor
-:param y: A complex vector or matrix.
-:type y: torch.Tensor
-:returns: The product between x and y.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -232,18 +189,8 @@ complex vectors and scalars or two complex scalars.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="inner_prod" class="doc_header"><code>inner_prod</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L107" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>inner_prod</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="inner_prod" class="doc_header"><code>inner_prod</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L58" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>inner_prod</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>A function that returns the inner product of two complex vectors,
-x and y (&lt;x|y&gt;).
-:param x: A complex vector.
-:type x: torch.Tensor
-:param y: A complex vector.
-:type y: torch.Tensor
-:raises ValueError: If x and y are not complex vectors with their first
-                    dimensions being 2, then the function will not execute.
-:returns: The inner product, :math:<code>\langle x\vert y\rangle</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -266,19 +213,8 @@ x and y (&lt;x|y&gt;).
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="outer_prod" class="doc_header"><code>outer_prod</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>outer_prod</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="outer_prod" class="doc_header"><code>outer_prod</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>outer_prod</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>A function that returns the outer product of two complex vectors, x
-and y.
-:param x: A complex vector.
-:type x: torch.Tensor
-:param y: A complex vector.
-:type y: torch.Tensor
-:raises ValueError: If x and y are not complex vectors with their first
-                    dimensions being 2, then an error will be raised.
-:returns: The outer product between x and y,
-    :math:<code>\vert x \rangle\langle y\vert</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -301,24 +237,8 @@ and y.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="einsum" class="doc_header"><code>einsum</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>einsum</code>(<strong><code>equation</code></strong>, <strong><code>a</code></strong>, <strong><code>b</code></strong>, <strong><code>real_part</code></strong>=<em><code>True</code></em>, <strong><code>imag_part</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="einsum" class="doc_header"><code>einsum</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L86" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>einsum</code>(<strong><code>equation</code></strong>, <strong><code>a</code></strong>, <strong><code>b</code></strong>, <strong><code>real_part</code></strong>=<em><code>True</code></em>, <strong><code>imag_part</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
-<p>Complex-aware version of <a href="/vqc_loss_landscapes/complex#einsum"><code>einsum</code></a>. See the torch documentation for more
-details.
-:param equation: The index equation. Passed directly to <code>torch.einsum</code>.
-:type equation: str
-:param a: A complex tensor.
-:type a: torch.Tensor
-:param b: A complex tensor.
-:type b: torch.Tensor
-:param real_part: Whether to compute and return the real part of the result.
-:type real_part: bool
-:param imag_part: Whether to compute and return the imaginary part of the result.
-:type imag_part: bool
-:returns: The Einstein summation of the input tensors performed according to
-          the given equation. If both <code>real_part</code> and <code>imag_part</code> are true,
-          the result will be a complex tensor, otherwise a real tensor.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -341,16 +261,8 @@ details.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="conjugate" class="doc_header"><code>conjugate</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L195" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>conjugate</code>(<strong><code>x</code></strong>)</p>
+<h4 id="conjugate" class="doc_header"><code>conjugate</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>conjugate</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Returns the conjugate transpose of the argument.
-In the case of a scalar or vector, only the complex conjugate is taken.
-In the case of a rank-2 or higher tensor, the complex conjugate is taken,
-then the first two indices of the tensor are swapped.
-:param x: A complex tensor.
-:type x: torch.Tensor
-:returns: The conjugate of x.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -373,13 +285,8 @@ then the first two indices of the tensor are swapped.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="conj" class="doc_header"><code>conj</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L213" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>conj</code>(<strong><code>x</code></strong>)</p>
+<h4 id="conj" class="doc_header"><code>conj</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>conj</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Returns the element-wise complex conjugate of the argument.
-:param x: A complex tensor.
-:type x: torch.Tensor
-:returns: The complex conjugate of x.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -402,9 +309,8 @@ then the first two indices of the tensor are swapped.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="elementwise_mult" class="doc_header"><code>elementwise_mult</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>elementwise_mult</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="elementwise_mult" class="doc_header"><code>elementwise_mult</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L119" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>elementwise_mult</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>Alias for :func:<a href="/vqc_loss_landscapes/complex#scalar_mult"><code>scalar_mult</code></a>.</p>
 
 </div>
 
@@ -427,14 +333,8 @@ then the first two indices of the tensor are swapped.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="elementwise_division" class="doc_header"><code>elementwise_division</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L228" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>elementwise_division</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="elementwise_division" class="doc_header"><code>elementwise_division</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>elementwise_division</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>Element-wise division of x by y.
-:param x: A complex tensor.
-:type x: torch.Tensor
-:param y: A complex tensor.
-:type y: torch.Tensor
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -457,13 +357,8 @@ then the first two indices of the tensor are swapped.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="absolute_value" class="doc_header"><code>absolute_value</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L246" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>absolute_value</code>(<strong><code>x</code></strong>)</p>
+<h4 id="absolute_value" class="doc_header"><code>absolute_value</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L134" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>absolute_value</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Returns the complex absolute value elementwise.
-:param x: A complex tensor.
-:type x: torch.Tensor
-:returns: A real tensor.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -486,17 +381,8 @@ then the first two indices of the tensor are swapped.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="kronecker_prod" class="doc_header"><code>kronecker_prod</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L257" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>kronecker_prod</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="kronecker_prod" class="doc_header"><code>kronecker_prod</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L139" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>kronecker_prod</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>Returns the tensor / Kronecker product of 2 complex matrices, x and y.
-:param x: A complex matrix.
-:type x: torch.Tensor
-:param y: A complex matrix.
-:type y: torch.Tensor
-:raises ValueError: If x and y do not have 3 dimensions or their first
-                    dimension is not 2, the function cannot execute.
-:returns: The Kronecker product of x and y, :math:<code>x \otimes y</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -519,15 +405,8 @@ then the first two indices of the tensor are swapped.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sigmoid" class="doc_header"><code>sigmoid</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L276" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sigmoid</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="sigmoid" class="doc_header"><code>sigmoid</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sigmoid</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>Returns the sigmoid function of a complex number. Acts elementwise.
-:param x: The real part of the complex number
-:type x: torch.Tensor
-:param y: The imaginary part of the complex number
-:type y: torch.Tensor
-:returns: The complex sigmoid of :math:<code>x + iy</code>
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -550,17 +429,8 @@ then the first two indices of the tensor are swapped.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="scalar_divide" class="doc_header"><code>scalar_divide</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L293" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scalar_divide</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
+<h4 id="scalar_divide" class="doc_header"><code>scalar_divide</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L157" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scalar_divide</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>)</p>
 </blockquote>
-<p>Divides <code>x</code> by <code>y</code>.
-If <code>x</code> and <code>y</code> have the same shape, then acts elementwise.
-If <code>y</code> is a complex scalar, then performs a scalar division.
-:param x: The numerator (a complex tensor).
-:type x: torch.Tensor
-:param y: The denominator (a complex tensor).
-:type y: torch.Tensor
-:returns: x / y
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -583,13 +453,8 @@ If <code>y</code> is a complex scalar, then performs a scalar division.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="inverse" class="doc_header"><code>inverse</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L307" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>inverse</code>(<strong><code>z</code></strong>)</p>
+<h4 id="inverse" class="doc_header"><code>inverse</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>inverse</code>(<strong><code>z</code></strong>)</p>
 </blockquote>
-<p>Returns the multiplicative inverse of <code>z</code>. Acts elementwise.
-:param z: The complex tensor.
-:type z: torch.Tensor
-:returns: 1 / z
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -612,13 +477,8 @@ If <code>y</code> is a complex scalar, then performs a scalar division.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="norm_sqr" class="doc_header"><code>norm_sqr</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L320" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>norm_sqr</code>(<strong><code>x</code></strong>)</p>
+<h4 id="norm_sqr" class="doc_header"><code>norm_sqr</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L168" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>norm_sqr</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Returns the squared norm of the argument.
-:param x: A complex scalar.
-:type x: torch.Tensor
-:returns: :math:<code>|x|^2</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 
@@ -641,13 +501,8 @@ If <code>y</code> is a complex scalar, then performs a scalar division.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="norm" class="doc_header"><code>norm</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L330" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>norm</code>(<strong><code>x</code></strong>)</p>
+<h4 id="norm" class="doc_header"><code>norm</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/complex.py#L172" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>norm</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
-<p>Returns the norm of the argument.
-:param x: A complex scalar.
-:type x: torch.Tensor
-:returns: :math:<code>|x|</code>.
-:rtype: torch.Tensor</p>
 
 </div>
 

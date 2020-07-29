@@ -40,10 +40,6 @@ def R1(angle, matrix):
         angle (float): rotation angle
 
         matrix (array): rotation axis defined by 2x2 matrix
-
-    Returns:
-
-        $cos(\Theta/2)$
     """
     return torch.cos(angle/2).to(device)*unity.to(device) + torch.sin(angle/2).to(device)*make_complex(matrix*1j).to(device)
 
@@ -55,27 +51,28 @@ def R3(angles):
 
         angles: list / array of length 3
 
-        phi = list[0], theta = list[1], omega = list[2]
+        phi = angles[0], theta = angles[1], omega = angles[2]
     """
     return matmul(matmul(R1(angles[0], Z), R1(angles[1], Y)), R1(angles[2], Z))
 
 def CZ(width, c=None, t=None):
     """
     Controlled Z gate between two qubits
-    Attributes:
-    width: int
-        number of qubits of circuit
-    c: int
-        control qubit
-    t: int
-        target qubit
+
+    Parameters:
+
+        width (int): number of qubits of circuit
+
+        c (int): control qubit
+
+        t (int): target qubit
     """
     a = QCirc.csign(N=width, control=c, target=t).data
     return a.todense()
 
 def Measurements(width, device="cpu"):
     """
-    Projective measurements as they are used in th ereuploading paper
+    Projective measurements as they are used in the reuploading paper
     """
     ket1 = qt.basis(2, 0)
     ket2 = qt.basis(2, 1)
@@ -86,28 +83,14 @@ def Measurements(width, device="cpu"):
 def Measurement_Z(width, device="cpu"):
     """
     Z measurement of the 0-th qubit
-    Attributes:
-    width: int
-        number of qubits of the circuit
     """
     Z = qt.sigmaz()
     a = qt.tensor(Z, qt.qeye(2**(width-1))).data
     return make_complex(a.todense()).to(device)
 
-# def cost(x):
-#     """
-#     Cost function
-#     """
-#     x_star = conj(x)
-#     return 1-real(inner_prod(x, x_star))**2
-
 def flatten_grad(grad):
     """
     Flattens the gradient tensor to a rank 1 tensor
-    Attributes:
-    -----------
-    grad: torch tensor
-        autograd object of pytorch
     """
     tuple_to_list = []
     for tensor in grad:
@@ -118,12 +101,12 @@ def flatten_grad(grad):
 def find_hessian(loss, params, x=None):
     """
     calculate the Hessian of a given loss with respect to given parameters.
-    Attributes:
-    -----------
-    loss:
-        some pytorch loss
-    params:
-        circuit parameters
+
+    Parameters:
+
+        loss: some pytorch loss
+
+        params: circuit parameters
     """
     grad1 = torch.autograd.grad(loss, params, create_graph=True, allow_unused=True) #create graph important for the gradients
 
@@ -155,7 +138,7 @@ def find_heigenvalues(loss, params):
 
 def loss_function(circ, params, x, init, target):
     """
-
+    Custom loss function for VQC
     """
     out1 = matmul(circ(params, x=x), init)
     out1 = inner_prod(target, out1)
@@ -164,6 +147,9 @@ def loss_function(circ, params, x, init, target):
     return out2
 
 def batch_loss_function_sigmoid(circ, params, x_train, y_train, init, measurements=None):
+    """
+    Loss for batch with sigmoid activation
+    """
     loss = 0.0
     for x,y in zip(x_train, y_train):
         idx = int((y + 1)/2)
@@ -177,6 +163,9 @@ def batch_loss_function_sigmoid(circ, params, x_train, y_train, init, measuremen
     return loss/len(x_train)
 
 def batch_loss_function(circ, params, x_train, y_train, init, measurements=None):
+    """
+    Loss for batch without sigmoid activation
+    """
     loss = 0.0
     for x,y in zip(x_train, y_train):
         idx = int((y + 1)/2)

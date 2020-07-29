@@ -33,15 +33,19 @@ else:
 # Cell
 def R1(angle, matrix):
     """
-    Rotation Gate around axis defined by matrix $M$ and angle $\theta$
+    Rotation Gate around axis defined by matrix $M$ and angle $\Theta$
 
     Parameters:
+
     angle: float
         rotation angle
+
     matrix: 2x2 np.array matrix $M$
         rotation axis defined by 2x2 matrix
+
     Returns:
-    $cos(\theta/2)$
+
+    $cos(\Theta/2)$
     """
     return torch.cos(angle/2).to(device)*unity.to(device) + torch.sin(angle/2).to(device)*make_complex(matrix*1j).to(device)
 

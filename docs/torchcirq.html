@@ -62,13 +62,14 @@ sidebar: home_sidebar
 <h4 id="R1" class="doc_header"><code>R1</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R1</code>(<strong><code>angle</code></strong>, <strong><code>matrix</code></strong>)</p>
 </blockquote>
 <p>Rotation Gate around axis defined by matrix $M$ and angle $\Theta$</p>
-<p>Parameters:</p>
-<p>angle: float
-    rotation angle</p>
-<p>matrix: 2x2 np.array matrix $M$
-    rotation axis defined by 2x2 matrix</p>
-<p>Returns:</p>
-<p>$cos(\Theta/2)$</p>
+<p>Parameters:
+    angle (float): rotation angle</p>
+
+<pre><code>matrix (arry): 2x2 np.array matrix $M$, rotation axis defined by 2x2 matrix
+
+</code></pre>
+<p>Returns:
+    $cos(\Theta/2)$</p>
 
 </div>
 
@@ -91,11 +92,11 @@ sidebar: home_sidebar
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="R3" class="doc_header"><code>R3</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R3</code>(<strong><code>angles</code></strong>)</p>
+<h4 id="R3" class="doc_header"><code>R3</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R3</code>(<strong><code>angles</code></strong>)</p>
 </blockquote>
-<p>R3 rotation R3(phi, theta, omega) = RZ(omega) RY(theta) RZ(phi)
-Attributes:
-angles: list / array of length 3
+<p>R3 rotation R3(phi, theta, omega) = RZ(omega) RY(theta) RZ(phi)</p>
+<p>Parameters:
+    angles: list / array of length 3
     phi = list[0], theta = list[1], omega = list[2]</p>
 
 </div>
@@ -119,7 +120,7 @@ angles: list / array of length 3
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="CZ" class="doc_header"><code>CZ</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CZ</code>(<strong><code>width</code></strong>, <strong><code>c</code></strong>=<em><code>None</code></em>, <strong><code>t</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="CZ" class="doc_header"><code>CZ</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L58" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CZ</code>(<strong><code>width</code></strong>, <strong><code>c</code></strong>=<em><code>None</code></em>, <strong><code>t</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Controlled Z gate between two qubits
 Attributes:
@@ -151,7 +152,7 @@ t: int
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Measurements" class="doc_header"><code>Measurements</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Measurements</code>(<strong><code>width</code></strong>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
+<h4 id="Measurements" class="doc_header"><code>Measurements</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L72" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Measurements</code>(<strong><code>width</code></strong>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
 </blockquote>
 <p>Projective measurements as they are used in th ereuploading paper</p>
 
@@ -176,7 +177,7 @@ t: int
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Measurement_Z" class="doc_header"><code>Measurement_Z</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L85" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Measurement_Z</code>(<strong><code>width</code></strong>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
+<h4 id="Measurement_Z" class="doc_header"><code>Measurement_Z</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L82" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Measurement_Z</code>(<strong><code>width</code></strong>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
 </blockquote>
 <p>Z measurement of the 0-th qubit
 Attributes:
@@ -204,7 +205,7 @@ width: int
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="flatten_grad" class="doc_header"><code>flatten_grad</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_grad</code>(<strong><code>grad</code></strong>)</p>
+<h4 id="flatten_grad" class="doc_header"><code>flatten_grad</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L100" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>flatten_grad</code>(<strong><code>grad</code></strong>)</p>
 </blockquote>
 <p>Flattens the gradient tensor to a rank 1 tensor</p>
 <h2 id="Attributes:">Attributes:<a class="anchor-link" href="#Attributes:"> </a></h2><p>grad: torch tensor
@@ -231,7 +232,7 @@ width: int
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="find_hessian" class="doc_header"><code>find_hessian</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_hessian</code>(<strong><code>loss</code></strong>, <strong><code>params</code></strong>, <strong><code>x</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="find_hessian" class="doc_header"><code>find_hessian</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_hessian</code>(<strong><code>loss</code></strong>, <strong><code>params</code></strong>, <strong><code>x</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>calculate the Hessian of a given loss with respect to given parameters.</p>
 <h2 id="Attributes:">Attributes:<a class="anchor-link" href="#Attributes:"> </a></h2><p>loss:
@@ -260,7 +261,7 @@ params:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="find_heigenvalues" class="doc_header"><code>find_heigenvalues</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L147" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_heigenvalues</code>(<strong><code>loss</code></strong>, <strong><code>params</code></strong>)</p>
+<h4 id="find_heigenvalues" class="doc_header"><code>find_heigenvalues</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L144" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_heigenvalues</code>(<strong><code>loss</code></strong>, <strong><code>params</code></strong>)</p>
 </blockquote>
 <p>Find the eigenvalues of the Hessian of a given loss and given parameters.</p>
 
@@ -285,7 +286,7 @@ params:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="loss_function" class="doc_header"><code>loss_function</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L155" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>loss_function</code>(<strong><code>circ</code></strong>, <strong><code>params</code></strong>, <strong><code>x</code></strong>, <strong><code>init</code></strong>, <strong><code>target</code></strong>)</p>
+<h4 id="loss_function" class="doc_header"><code>loss_function</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>loss_function</code>(<strong><code>circ</code></strong>, <strong><code>params</code></strong>, <strong><code>x</code></strong>, <strong><code>init</code></strong>, <strong><code>target</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -309,7 +310,7 @@ params:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="batch_loss_function_sigmoid" class="doc_header"><code>batch_loss_function_sigmoid</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L165" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>batch_loss_function_sigmoid</code>(<strong><code>circ</code></strong>, <strong><code>params</code></strong>, <strong><code>x_train</code></strong>, <strong><code>y_train</code></strong>, <strong><code>init</code></strong>, <strong><code>measurements</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="batch_loss_function_sigmoid" class="doc_header"><code>batch_loss_function_sigmoid</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L162" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>batch_loss_function_sigmoid</code>(<strong><code>circ</code></strong>, <strong><code>params</code></strong>, <strong><code>x_train</code></strong>, <strong><code>y_train</code></strong>, <strong><code>init</code></strong>, <strong><code>measurements</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -333,7 +334,7 @@ params:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="batch_loss_function" class="doc_header"><code>batch_loss_function</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L178" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>batch_loss_function</code>(<strong><code>circ</code></strong>, <strong><code>params</code></strong>, <strong><code>x_train</code></strong>, <strong><code>y_train</code></strong>, <strong><code>init</code></strong>, <strong><code>measurements</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="batch_loss_function" class="doc_header"><code>batch_loss_function</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L175" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>batch_loss_function</code>(<strong><code>circ</code></strong>, <strong><code>params</code></strong>, <strong><code>x_train</code></strong>, <strong><code>y_train</code></strong>, <strong><code>init</code></strong>, <strong><code>measurements</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -357,7 +358,7 @@ params:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Toy_Model" class="doc_header"><code>class</code> <code>Toy_Model</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L191" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Toy_Model</code>(<strong><code>params</code></strong>, <strong><code>width</code></strong>=<em><code>2</code></em>, <strong><code>layers</code></strong>=<em><code>2</code></em>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
+<h2 id="Toy_Model" class="doc_header"><code>class</code> <code>Toy_Model</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L188" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Toy_Model</code>(<strong><code>params</code></strong>, <strong><code>width</code></strong>=<em><code>2</code></em>, <strong><code>layers</code></strong>=<em><code>2</code></em>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
 </blockquote>
 <p>Toy model for state rotation</p>
 
@@ -382,7 +383,7 @@ params:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="General_Model" class="doc_header"><code>class</code> <code>General_Model</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L221" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>General_Model</code>(<strong><code>params</code></strong>, <strong><code>width</code></strong>=<em><code>2</code></em>, <strong><code>layers</code></strong>=<em><code>2</code></em>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
+<h2 id="General_Model" class="doc_header"><code>class</code> <code>General_Model</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L218" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>General_Model</code>(<strong><code>params</code></strong>, <strong><code>width</code></strong>=<em><code>2</code></em>, <strong><code>layers</code></strong>=<em><code>2</code></em>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
 </blockquote>
 <p>General Model for state rotation</p>
 
@@ -407,7 +408,7 @@ params:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Model_Z_measure" class="doc_header"><code>class</code> <code>Model_Z_measure</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L258" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Model_Z_measure</code>(<strong><code>params</code></strong>, <strong><code>width</code></strong>=<em><code>2</code></em>, <strong><code>layers</code></strong>=<em><code>2</code></em>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
+<h2 id="Model_Z_measure" class="doc_header"><code>class</code> <code>Model_Z_measure</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L255" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Model_Z_measure</code>(<strong><code>params</code></strong>, <strong><code>width</code></strong>=<em><code>2</code></em>, <strong><code>layers</code></strong>=<em><code>2</code></em>, <strong><code>device</code></strong>=<em><code>'cpu'</code></em>)</p>
 </blockquote>
 <p>Data Reuploading circuit</p>
 

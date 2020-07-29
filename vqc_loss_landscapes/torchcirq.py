@@ -36,24 +36,21 @@ def R1(angle, matrix):
     Rotation Gate around axis defined by matrix $M$ and angle $\Theta$
 
     Parameters:
+        angle (float): rotation angle
 
-    angle: float
-        rotation angle
-
-    matrix: 2x2 np.array matrix $M$
-        rotation axis defined by 2x2 matrix
+        matrix (arry): 2x2 np.array matrix $M$, rotation axis defined by 2x2 matrix
 
     Returns:
-
-    $cos(\Theta/2)$
+        $cos(\Theta/2)$
     """
     return torch.cos(angle/2).to(device)*unity.to(device) + torch.sin(angle/2).to(device)*make_complex(matrix*1j).to(device)
 
 def R3(angles):
     """
     R3 rotation R3(phi, theta, omega) = RZ(omega) RY(theta) RZ(phi)
-    Attributes:
-    angles: list / array of length 3
+
+    Parameters:
+        angles: list / array of length 3
         phi = list[0], theta = list[1], omega = list[2]
     """
     return matmul(matmul(R1(angles[0], Z), R1(angles[1], Y)), R1(angles[2], Z))

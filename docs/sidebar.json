@@ -4,6 +4,7 @@
     "torchcirq": "/torchcirq",
     "complex": "/complex",
     "pennylanecirq": "/pennylanecirq",
+    "Data Helper": "/data_helper",
     "Title": "/hess_vs_metrictensor",
     "Example: Pytorch version for QNN trained on Data": "/Ex1_Train_Reuploading_Circuit_Pytorch",
     "Example: Pennylane version for QNN trained on Data": "/Ex2_Train_pennylane_Hessian",

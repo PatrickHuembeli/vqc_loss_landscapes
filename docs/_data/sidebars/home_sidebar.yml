@@ -19,6 +19,9 @@ entries:
       title: pennylanecirq
       url: /pennylanecirq
     - output: web,pdf
+      title: Data Helper
+      url: /data_helper
+    - output: web,pdf
       title: Title
       url: /hess_vs_metrictensor
     - output: web,pdf

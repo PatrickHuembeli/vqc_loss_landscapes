@@ -1,4 +1,7 @@
 # Characterizing the loss landscape of variational quantum circuits
+
+[![DOI](https://zenodo.org/badge/273284532.svg)](https://zenodo.org/badge/latestdoi/273284532)
+
 > By Patrick Huembeli and Alexandre Dauphin
 
 

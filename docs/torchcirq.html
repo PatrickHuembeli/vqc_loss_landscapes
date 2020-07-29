@@ -61,11 +61,14 @@ sidebar: home_sidebar
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="R1" class="doc_header"><code>R1</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R1</code>(<strong><code>angle</code></strong>, <strong><code>matrix</code></strong>)</p>
 </blockquote>
-<p>Rotation Gate around axis defined by matrix</p>
-<h2 id="Attributes:">Attributes:<a class="anchor-link" href="#Attributes:"> </a></h2><p>angle: float
+<p>Rotation Gate around axis defined by matrix $M$ and angle $ heta$</p>
+<p>Parameters:
+angle: float
     rotation angle
-matrix: 2x2 np.array matrix
-    rotation axis defined by 2x2 matrix</p>
+matrix: 2x2 np.array matrix $M$
+    rotation axis defined by 2x2 matrix
+Returns:
+$cos(       heta/2)$</p>
 
 </div>
 
@@ -88,10 +91,11 @@ matrix: 2x2 np.array matrix
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="R3" class="doc_header"><code>R3</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L46" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R3</code>(<strong><code>angles</code></strong>)</p>
+<h4 id="R3" class="doc_header"><code>R3</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>R3</code>(<strong><code>angles</code></strong>)</p>
 </blockquote>
-<p>R3 rotation R3(phi, theta, omega) = RZ(omega) RY(theta) RZ(phi)</p>
-<h2 id="Attributes:">Attributes:<a class="anchor-link" href="#Attributes:"> </a></h2><p>angles: list / array of length 3
+<p>R3 rotation R3(phi, theta, omega) = RZ(omega) RY(theta) RZ(phi)
+Attributes:
+angles: list / array of length 3
     phi = list[0], theta = list[1], omega = list[2]</p>
 
 </div>
@@ -115,10 +119,11 @@ matrix: 2x2 np.array matrix
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="CZ" class="doc_header"><code>CZ</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CZ</code>(<strong><code>width</code></strong>, <strong><code>c</code></strong>=<em><code>None</code></em>, <strong><code>t</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="CZ" class="doc_header"><code>CZ</code><a href="https://github.com/PatrickHuembeli/vqc_loss_landscapes/tree/master/vqc_loss_landscapes/torchcirq.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CZ</code>(<strong><code>width</code></strong>, <strong><code>c</code></strong>=<em><code>None</code></em>, <strong><code>t</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Controlled Z gate between two qubits</p>
-<h2 id="Attributes:">Attributes:<a class="anchor-link" href="#Attributes:"> </a></h2><p>width: int
+<p>Controlled Z gate between two qubits
+Attributes:
+width: int
     number of qubits of circuit
 c: int
     control qubit

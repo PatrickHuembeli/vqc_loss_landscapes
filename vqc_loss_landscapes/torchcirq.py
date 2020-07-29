@@ -33,13 +33,15 @@ else:
 # Cell
 def R1(angle, matrix):
     """
-    Rotation Gate around axis defined by matrix
-    Attributes:
-    -----------
+    Rotation Gate around axis defined by matrix $M$ and angle $\theta$
+
+    Parameters:
     angle: float
         rotation angle
-    matrix: 2x2 np.array matrix
+    matrix: 2x2 np.array matrix $M$
         rotation axis defined by 2x2 matrix
+    Returns:
+    $cos(\theta/2)$
     """
     return torch.cos(angle/2).to(device)*unity.to(device) + torch.sin(angle/2).to(device)*make_complex(matrix*1j).to(device)
 
@@ -47,7 +49,6 @@ def R3(angles):
     """
     R3 rotation R3(phi, theta, omega) = RZ(omega) RY(theta) RZ(phi)
     Attributes:
-    -----------
     angles: list / array of length 3
         phi = list[0], theta = list[1], omega = list[2]
     """
@@ -57,7 +58,6 @@ def CZ(width, c=None, t=None):
     """
     Controlled Z gate between two qubits
     Attributes:
-    -----------
     width: int
         number of qubits of circuit
     c: int
